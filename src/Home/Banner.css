@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@500&display=swap');
+
+.banner {
+  background-color: lightblue;
+  height: 400px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  background-image: url("https://image.flaticon.com/icons/png/512/102/102571.png");
+  background-repeat: no-repeat;
+  background-position-x: 75%;
+  background-position-y: bottom;
+}
+
+.banner h1 {
+  font-family: "spectral", serif;
+  line-height: 74px;
+  letter-spacing: -4px;
+  word-spacing: 0.05em;
+  font-size: 74px;
+  width: 700px;
+}
+
+.banner p {
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.banner a {
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: 100px;
+  border: 1px solid black;
+}
+
+.banner .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

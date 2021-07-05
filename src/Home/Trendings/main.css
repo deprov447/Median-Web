@@ -1,0 +1,14 @@
+.trending-head {
+  font-weight: 700;
+  font-variant-caps: all-petite-caps;
+  letter-spacing: 1.5px;
+  font-size: 16px;
+}
+
+.trending-wrapper{
+  margin: 40px auto;
+}
+
+.trending-content{
+  margin-top: 20px;
+}

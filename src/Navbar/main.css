@@ -4,7 +4,6 @@
   font-family: "Inter", sans-serif;
   display: flex;
   height: 75px;
-  border-bottom: 1px solid black;
   align-items: center;
   justify-content: space-between;
 }

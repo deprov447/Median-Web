@@ -8,13 +8,14 @@ import Membership from "./Membership/main";
 import Write from "./Write/main";
 import SignIn from "./SignIn/main";
 import GetStarted from "./GetStarted/main";
-import Lost404 from "./Lost404/main"
+import Lost404 from "./Lost404/main";
 
 function App() {
   return (
     <Router>
-      <div className="App container mx-auto">
+      <div className="App">
         <Navbar />
+        <hr className="seperator" />
         <div className="content">
           <Switch>
             <Route exact path="/">
