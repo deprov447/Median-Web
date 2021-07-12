@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-const style = require("./main.css");
+import "./main.css"
 
 const Navbar = () => {
   return (

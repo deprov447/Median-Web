@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-const BannerStyle = require("./Banner.css");
+import "./Banner.css"
 
 const Banner = () => {
   return (

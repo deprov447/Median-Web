@@ -1,9 +1,8 @@
 import "./card.css"
 
-const TrendingCard = () => {
+const MainBlogCard = () => {
   return (
-    <div className="trendingCard">
-      <div className="numbering">01</div>
+    <div className="mainBlogCard">
       <div className="cardpart">
         <div className="publishedIn">
           <img src="" alt="" />
@@ -22,4 +21,4 @@ const TrendingCard = () => {
   );
 };
 
-export default TrendingCard;
+export default MainBlogCard;

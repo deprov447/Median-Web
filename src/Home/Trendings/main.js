@@ -1,5 +1,5 @@
 import TrendingCard from "./Card";
-const TrendingWrapperStyle = require("./main.css");
+import "./main.css"
 
 const Trendings = () => {
   return (
