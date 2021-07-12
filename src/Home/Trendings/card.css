@@ -35,3 +35,9 @@
 .trendingCard .dot {
   margin: 0 10px;
 }
+.trendingCard img{
+  width: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 7px;
+}

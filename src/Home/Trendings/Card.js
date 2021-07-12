@@ -1,22 +1,35 @@
-import "./card.css"
+import "./card.css";
 
-const TrendingCard = () => {
+const TrendingCard = (props) => {
+  const data = props.data;
+  let publishData;
+  if (data.published.length > 0)
+    publishData = (
+      <wrapper>
+        <span>in</span>
+        <a href="/">{data.published[0]}</a>;
+      </wrapper>
+    );
+
   return (
     <div className="trendingCard">
-      <div className="numbering">01</div>
+      <div className="numbering">{data.rank}</div>
       <div className="cardpart">
         <div className="publishedIn">
-          <img src="" alt="" />
+          <img src={data.authorIcon} alt="" className="authorIcon" />
           <span>
-            Brian Armstrong
-            <span>in</span> 
-            The Coinbase Blog
+            <a href="/">{data.author}</a>
+            {publishData}
           </span>
         </div>
-        <h3>Embracing decentralization at Coinbase</h3>
-        <span className="date">June 30</span>
+        <h3>
+          <a href="/">{data.title}</a>
+        </h3>
+        <span className="date">
+          {data.date.substr(0, data.date.length - 5)}
+        </span>
         <span className="dot">·</span>
-        <span className="length">5 min read</span>
+        <span className="length">{data.readTime}</span>
       </div>
     </div>
   );
