@@ -9,6 +9,7 @@
   /* background-color: chartreuse; */
   min-width: 400px;
   width: 60%;
+  max-width: 100%;
 }
 
 .homeContent .rightCol {

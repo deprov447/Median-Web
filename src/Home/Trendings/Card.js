@@ -7,7 +7,7 @@ const TrendingCard = (props) => {
     publishData = (
       <wrapper>
         <span>in</span>
-        <a href="/">{data.published[0]}</a>;
+        <a href="/">{data.published[0]}</a>
       </wrapper>
     );
 

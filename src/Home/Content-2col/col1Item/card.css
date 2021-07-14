@@ -1,0 +1,58 @@
+.mainBlogCard {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.mainBlogCard .numbering {
+  font-size: 30px;
+  color: lightgray;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 700;
+}
+
+.mainBlogCard .cardpart {
+  margin-left: 10px;
+}
+
+.mainBlogCard .publishedIn {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.mainBlogCard .publishedIn span span {
+  font-weight: 400;
+  margin: 0 3px;
+}
+
+.mainBlogCard h3 {
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.mainBlogCard .date,
+.mainBlogCard .length,
+.mainBlogCard .tag {
+  color: gray;
+  font-size: 12px;
+}
+
+.mainBlogCard .dot {
+  margin: 0 10px;
+}
+
+.mainBlogCard img {
+  width: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 7px;
+}
+
+.mainBlogCard .tag {
+  background-color: lightgray;
+  border-radius: 50px;
+  padding: 3px 7px;
+}
+
+.mainBlogCard .bookmark{
+  float: right;
+}

@@ -47,5 +47,6 @@ const TempData = {
   readTime: "5 min",
   tags: ["tag1", "tag2", "tag3"],
   rank: "02",
-  authorIcon: "https://assets.leetcode.com/users/megaspazz/avatar_1571494876.png"
+  authorIcon: "https://assets.leetcode.com/users/megaspazz/avatar_1571494876.png",
+  isStarred: true
 };
