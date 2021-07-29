@@ -41,12 +41,15 @@ export default Trendings;
 const TempData = {
   id: "1",
   title: "My Temporary Blog Post",
-  author: "Anubhav",
+  author: {
+    name: "Anubhav",
+    id: "1",
+    icon: "https://assets.leetcode.com/users/megaspazz/avatar_1571494876.png",
+  },
   published: ["The CoinDX Blog"],
   date: "June 31st 2021",
   readTime: "5 min",
   tags: ["tag1", "tag2", "tag3"],
   rank: "02",
-  authorIcon: "https://assets.leetcode.com/users/megaspazz/avatar_1571494876.png",
-  isStarred: true
+  isStarred: true,
 };

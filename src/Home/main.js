@@ -1,6 +1,6 @@
 import Banner from "./Banner";
 import Trendings from "./Trendings/main";
-import Content2Col  from "./Content-2col/main"
+import Content2Col from "./Content-2col/main";
 
 const Home = () => {
   return (
@@ -9,7 +9,7 @@ const Home = () => {
       <hr className="seperator" />
       <Trendings />
       <hr />
-      <Content2Col/>
+      <Content2Col />
     </div>
   );
 };

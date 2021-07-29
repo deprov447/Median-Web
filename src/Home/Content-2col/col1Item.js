@@ -45,7 +45,10 @@ export default Col1Item;
 const TempData = {
   id: "1",
   title: "My Temporary Blog Post",
-  author: "Anubhav",
+  author: {
+    name: "Anubhav",
+    id: "1",
+  },
   published: ["The CoinDX Blog"],
   date: "June 31st 2021",
   readTime: "5 min",

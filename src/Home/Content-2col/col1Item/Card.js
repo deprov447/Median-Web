@@ -1,6 +1,7 @@
 import "./card.css";
 import { BsBookmarkFill, BsBookmark } from "react-icons/bs";
 import React from "react";
+import { Link } from "react-router-dom";
 
 class MainBlogCard extends React.Component {
   state = {
@@ -31,7 +32,7 @@ class MainBlogCard extends React.Component {
       publishData = (
         <wrapper>
           <span>in</span>
-          <a href="/">{data.published[0]}</a>
+          <Link to="/">{data.published[0]}</Link>
         </wrapper>
       );
 
@@ -41,12 +42,12 @@ class MainBlogCard extends React.Component {
           <div className="publishedIn">
             <img src={data.authorIcon} alt="" className="authorIcon" />
             <span>
-              <a href="/">{data.author}</a>
+              <Link to={`/author/${data.author.id}`}>{data.author.name}</Link>
               {publishData}
             </span>
           </div>
           <h3>
-            <a href="/">{data.title}</a>
+            <Link to={`/blog/${data.id}`}>{data.title}</Link>
           </h3>
           <p className="content">
             lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem
