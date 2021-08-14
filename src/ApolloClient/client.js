@@ -7,7 +7,7 @@ import {
 // import { RestLink } from "apollo-link-rest";
 
 const httpLink = new HttpLink({
-  uri: "https://graphqlzero.almansi.me/api",
+  uri: "http://localhost:8080/gql",
 });
 
 export const client = new ApolloClient({
