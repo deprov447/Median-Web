@@ -1,9 +1,18 @@
 import "./Blog.css";
 
-const Blog = () => {
+const Blog = (props) => {
+  const blogData = props.blogData;
+  console.log(blogData);
+
   return (
-    <div className="blog">
-      <h3>5 Code Smells React Beginners Should Avoid</h3>
+    <div>
+      {blogData.map((blog) => {
+        return (
+          <div className="blog">
+            <h3>{blog.title}</h3>
+          </div>
+        );
+      })}
     </div>
   );
 };
