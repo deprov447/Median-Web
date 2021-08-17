@@ -3,9 +3,12 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import React from "react";
 
 class Col1Item extends React.Component {
-  state = {
-    items: Array.from({ length: 20 }),
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: []
+    };
+  }
 
   fetchMoreData = () => {
     // a fake async api call like which sends
@@ -28,7 +31,7 @@ class Col1Item extends React.Component {
             loader={<h4>Loading...</h4>}
           >
             {this.state.items.map((i, index) => (
-              <MainBlogCard data={TempData} />
+              <MainBlogCard/>
             ))}
           </InfiniteScroll>
 
@@ -41,20 +44,3 @@ class Col1Item extends React.Component {
 }
 
 export default Col1Item;
-
-const TempData = {
-  id: "1",
-  title: "My Temporary Blog Post",
-  author: {
-    name: "Anubhav",
-    id: "1",
-  },
-  published: ["The CoinDX Blog"],
-  date: "June 31st 2021",
-  readTime: "5 min",
-  tags: ["tag1", "tag2", "tag3"],
-  rank: "02",
-  authorIcon:
-    "https://assets.leetcode.com/users/megaspazz/avatar_1571494876.png",
-  isStarred: true,
-};
