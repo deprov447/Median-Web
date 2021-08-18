@@ -6,7 +6,7 @@ class Col1Item extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: []
+      items: [],
     };
   }
 
@@ -22,8 +22,8 @@ class Col1Item extends React.Component {
 
   render() {
     return (
-      <div className="col1Item">
-        <div className="leftCol">
+      <div className="leftCol">
+        <div className="col1Item">
           <InfiniteScroll
             dataLength={this.state.items.length}
             next={this.fetchMoreData}
@@ -31,13 +31,12 @@ class Col1Item extends React.Component {
             loader={<h4>Loading...</h4>}
           >
             {this.state.items.map((i, index) => (
-              <MainBlogCard/>
+              <MainBlogCard />
             ))}
           </InfiniteScroll>
 
           {/* ToDo :: Self Loading at bottom */}
         </div>
-        <img src="" alt="" />
       </div>
     );
   }

@@ -6,10 +6,7 @@
 
 .homeContent .leftCol {
   flex-grow: 3;
-  /* background-color: chartreuse; */
-  min-width: 400px;
   width: 60%;
-  max-width: 100%;
 }
 
 .homeContent .rightCol {
@@ -58,5 +55,8 @@
 {
     .footer{
         display:none;
+    }
+    .homeContent .leftCol {
+      width: 100%;
     }
 }

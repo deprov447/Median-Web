@@ -10,8 +10,21 @@
   font-weight: 700;
 }
 
+.mainBlogCard .imagePart {
+  display: flex;
+  align-items: center;
+  width: 30%;
+}
+
+.mainBlogCard .imagePart img {
+  width: 90%;
+  border-radius: 7px;
+}
+
 .mainBlogCard .cardpart {
+  width: 70%;
   margin-left: 10px;
+  margin-right: 10px;
 }
 
 .mainBlogCard .publishedIn {
@@ -36,6 +49,12 @@
   font-size: 12px;
 }
 
+.star {
+  margin-left: 10px;
+  color: gray;
+  font-size: large;
+}
+
 .mainBlogCard .dot {
   margin: 0 10px;
 }
@@ -53,6 +72,6 @@
   padding: 3px 7px;
 }
 
-.mainBlogCard .bookmark{
+.mainBlogCard .bookmark {
   float: right;
 }

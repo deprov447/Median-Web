@@ -20,6 +20,7 @@ const RANDOMBLOG_QUERY = gql`
       readTime
       rank
       isStarred
+      tags
     }
   }
 `;
@@ -51,14 +52,32 @@ var MainBlogCard = (props) => {
 
   data = data.randomBlog;
 
-  var publishData;
-  if (data.publishedIn.length > 0)
-    publishData = (
-      <wrapper>
-        <span>in</span>
-        <Link to="/">{data.publishedIn[0]}</Link>
-      </wrapper>
-    );
+  const publishData = () => {
+    if (data.publishedIn.length > 0)
+      return (
+        <wrapper>
+          <span>in</span>
+          <Link to="/">{data.publishedIn}</Link>
+        </wrapper>
+      );
+  };
+
+  const renderTags = () => {
+    if (data.tags.length > 0)
+      return (
+        <span>
+          <span className="dot">·</span>
+          <span className="tag">
+            <a href="/">data.tags[0]</a>
+          </span>
+        </span>
+      );
+  };
+
+  const renderStars = () => {
+    if (data.isStarred) return <span className="star"> ★ </span>;
+    else return;
+  };
 
   return (
     <div className="mainBlogCard">
@@ -67,7 +86,7 @@ var MainBlogCard = (props) => {
           <img src={data.author.image} alt="" className="authorIcon" />
           <span>
             <Link to={`/author/${data.author.id}`}>{data.author.name}</Link>
-            {publishData}
+            {publishData()}
           </span>
         </div>
         <h3>
@@ -80,14 +99,19 @@ var MainBlogCard = (props) => {
           {data.date.substr(0, data.date.length - 5)}
         </span>
         <span className="dot">·</span>
-        <span className="length">{data.readTime}</span>
-        <span className="dot">·</span>
-        <span className="tag">
-          <a href="/">tag</a>
-        </span>
+        <span className="length">{data.readTime} min read</span>
+        {renderTags()}
+        {renderStars()}
         {/* <span className="bookmark" onClick={() => this.toggleBookmarked()}>
           {this.state.BookmarkIcon}
         </span> */}
+      </div>
+      <div className="imagePart">
+        {/* Todo: add image to blog schema */}
+        <img
+          src="https://miro.medium.com/fit/c/200/134/1*lzj4TgE2Og4deBavBl8BFA.jpeg"
+          alt=""
+        />
       </div>
     </div>
   );
