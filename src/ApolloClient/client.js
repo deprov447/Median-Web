@@ -6,9 +6,12 @@ import {
 } from "@apollo/client";
 // import { RestLink } from "apollo-link-rest";
 
-const httpLink = new HttpLink({
-  uri: "http://localhost:8080/gql",
-});
+const httpLink = new HttpLink(
+  {
+    uri: process.env.REACT_APP_GQL_SERVER_URL,
+  },
+  () => console.log(`GQL server on ${process.env.REACT_APP_GQL_SERVER_URL}`)
+);
 
 export const client = new ApolloClient({
   cache: new InMemoryCache(),
