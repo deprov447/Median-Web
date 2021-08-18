@@ -11,7 +11,7 @@ To create your development environment, follow these steps:
 - Install dependencies: `npm install`
 - Setup the environment variables:
 	- At this point you might want to setup your own Median API using [https://github.com/deprov447/median-server](https://github.com/deprov447/median-server) 
-	- In root directory of the median-web-client run: `echo REACT_APP_GQL_SERVER_URL = <your Median server url>`
+	- In root directory of the median-web-client run: `echo REACT_APP_GQL_SERVER_URL = <your Median server url> > .env`
 - Start the development environment: `npm start`
 
 ## Tech Stack Used
