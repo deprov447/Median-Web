@@ -10,6 +10,7 @@ const Blog = (props) => {
         return (
           <div className="blog">
             <h3>{blog.title}</h3>
+            <p>{blog.content}</p>
           </div>
         );
       })}

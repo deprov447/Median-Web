@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./About.css";
 
 const About = (props) => {
@@ -14,11 +15,14 @@ const About = (props) => {
       <div className="divbottom">
         <span className="head">{AuthorData.name} follows</span>
         <ul>
-          {AuthorData.following.map((i, index) => {
+          {AuthorData.following.map((person) => {
+            console.log(person)
             return (
               <li className="followlist">
-                <img src={i.image} alt="" />
-                <span>{i.name}</span>
+                <img src={person.image} alt="" />
+                <Link to={"/author/" + person.id}>
+                  <span>{person.name}</span>
+                </Link>
               </li>
             );
           })}
