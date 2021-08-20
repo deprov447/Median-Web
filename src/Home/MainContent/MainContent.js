@@ -1,13 +1,13 @@
-import Col1Item from "./col1Item";
-import Col2 from "./col2";
-import "./style.css";
+import BloglistColumn from "./BloglistColumn";
+import TopicsColumn from "./TopicsColumn";
+import "./MainContent.css";
 
 const HomeContent = () => {
   return (
     <div className="homeContent container mx-auto">
-      <Col1Item />
+      <BloglistColumn />
       <div className="rightCol">
-        <Col2 />
+        <TopicsColumn />
       </div>
     </div>
   );

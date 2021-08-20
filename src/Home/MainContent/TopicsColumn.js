@@ -1,4 +1,4 @@
-const Col2 = () => {
+const TopicsColumn = () => {
   return (
     <div>
       <h3 className="trending-head">DISCOVER MORE OF WHAT MATTERS TO YOU</h3>
@@ -29,4 +29,4 @@ const Col2 = () => {
   );
 };
 
-export default Col2;
+export default TopicsColumn;

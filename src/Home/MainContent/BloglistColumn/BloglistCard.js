@@ -1,8 +1,8 @@
-import "./card.css";
 // import { BsBookmarkFill, BsBookmark } from "react-icons/bs";
 import React from "react";
 import { Link } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
+import "./BloglistCard.css";
 
 const RANDOMBLOG_QUERY = gql`
   query {
@@ -25,7 +25,7 @@ const RANDOMBLOG_QUERY = gql`
   }
 `;
 
-var MainBlogCard = (props) => {
+var BloglistCard = (props) => {
   var { data, loading, error } = useQuery(RANDOMBLOG_QUERY);
 
   if (loading) {
@@ -117,4 +117,4 @@ var MainBlogCard = (props) => {
   );
 };
 
-export default MainBlogCard;
+export default BloglistCard;

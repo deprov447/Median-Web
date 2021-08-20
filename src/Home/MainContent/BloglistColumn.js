@@ -1,8 +1,8 @@
-import MainBlogCard from "./col1Item/Card";
+import BloglistCard from "./BloglistColumn/BloglistCard";
 import InfiniteScroll from "react-infinite-scroll-component";
 import React from "react";
 
-class Col1Item extends React.Component {
+class BloglistColumn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,7 +31,7 @@ class Col1Item extends React.Component {
             loader={<h4>Loading...</h4>}
           >
             {this.state.items.map((i, index) => (
-              <MainBlogCard />
+              <BloglistCard />
             ))}
           </InfiniteScroll>
 
@@ -42,4 +42,4 @@ class Col1Item extends React.Component {
   }
 }
 
-export default Col1Item;
+export default BloglistColumn;

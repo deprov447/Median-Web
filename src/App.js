@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { client } from "./ApolloClient/client";
 import { ApolloProvider } from "@apollo/client";
 
-import Navbar from "./Navbar/main";
-import Home from "./Home/main";
-import OurStory from "./OurStory/main";
-import Membership from "./Membership/main";
-import Write from "./Write/main";
-import SignIn from "./SignIn/main";
-import GetStarted from "./GetStarted/main";
-import Lost404 from "./Lost404/main";
+import Navbar from "./Navbar/Navbar";
+import Home from "./Home/Home";
+import OurStory from "./OurStory/OurStory";
+import Membership from "./Membership/Membership";
+import Write from "./Write/Write";
+import SignIn from "./SignIn/SignIn";
+import GetStarted from "./GetStarted/GetStarted";
+import Lost404 from "./Lost404/Lost404";
 import Blog from "./Blog/Blog";
 import Author from "./Author/Author";
 
