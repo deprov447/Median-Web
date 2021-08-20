@@ -16,7 +16,7 @@ const About = (props) => {
         <span className="head">{AuthorData.name} follows</span>
         <ul>
           {AuthorData.following.map((person) => {
-            console.log(person)
+            console.log(person);
             return (
               <li className="followlist">
                 <img src={person.image} alt="" />

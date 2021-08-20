@@ -32,7 +32,7 @@ const AUTHOR_QUERY = gql`
 
 const Author = () => {
   const { id } = useParams();
-  
+
   var { data, loading, error } = useQuery(AUTHOR_QUERY, {
     variables: { id },
   });

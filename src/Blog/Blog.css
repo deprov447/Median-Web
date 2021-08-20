@@ -7,6 +7,11 @@ h2 {
   color: grey;
 }
 
+.customContentWrapper {
+  max-width: 700px;
+  margin: 50px auto;
+}
+
 .authorBox {
   margin: 20px 0;
   display: flex;
@@ -17,6 +22,7 @@ h2 {
   border-radius: 50px;
   border: 1px solid green;
   padding: 3px;
+  height: 70px;
 }
 
 .authorBox .div {
@@ -84,6 +90,54 @@ h2 {
   font-size: 25px;
 }
 
-.tagsAndStat .stat span counts{
-    margin-right: 20px;
+.tagsAndStat .stat span counts {
+  margin-right: 40px;
+  margin-left: 5px;
+}
+
+.aboutAuthor {
+  display: flex;
+  align-items: center;
+}
+
+.aboutAuthor img {
+  border-radius: 100px;
+  border: 1px solid green;
+  padding: 3px;
+  height: 100px;
+}
+
+.aboutAuthor .email {
+  color: white;
+  background-color: green;
+  padding: 5px;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+.aboutAuthor .follow {
+  color: white;
+  background-color: green;
+  padding: 5px 15px;
+  border-radius: 20px;
+  margin: 0 10px;
+}
+.aboutAuthorContent {
+  padding: 0 20px;
+}
+.aboutAuthorContent .writtenByHeading {
+  font-size: small;
+  text-transform: uppercase;
+  color: rgb(49, 49, 49);
+}
+
+.aboutAuthorContent .name {
+  font-size: larger;
+  font-weight: 700;
+  margin: 10px 0;
+  color: rgb(49, 49, 49);
+}
+
+.aboutAuthorContent .about {
+  color: rgb(49, 49, 49);
 }

@@ -1,15 +1,23 @@
-import { useParams } from "react-router-dom";
-import { TiSocialTwitter } from "react-icons/ti";
+import { Link, useParams } from "react-router-dom";
+import {
+  TiSocialTwitter,
+  TiSocialLinkedin,
+  TiSocialFacebook,
+  TiBookmark,
+} from "react-icons/ti";
+import { FaRegComment, FaRegHeart } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
-import { AiFillStar } from "react-icons/ai";
 import { useQuery, gql } from "@apollo/client";
+import MainBlogContent from "./MainBlogContent";
 
 import "./Blog.css";
+import TopBar from "./TopBar";
 
 const BLOG_QUERY = gql`
   query something($id: ID!) {
     blog(id: $id) {
       author {
+        id
         name
         image
         about
@@ -44,39 +52,19 @@ const Blog = () => {
   var blog = data.blog;
 
   return (
-    <div className="container mx-auto">
-      <h1>{blog.title}</h1>
-      <h2>
+    <div className="container mx-auto ">
+      <h1 className="customContentWrapper">{blog.title}</h1>
+      <h2 className="customContentWrapper">
         {() => {
           if (data.subheading) return data.subheading;
         }}
       </h2>
-      <div className="authorBox">
-        <img src={blog.author.image} />
-        <div className="div">
-          <div className="line1">
-            <span className="name">{blog.author.name}</span>
-            <button>Follow</button>
-          </div>
-          <div className="line2">
-            <span className="dateAndTime">
-              <span>{blog.date}</span>
-            </span>
-            {() => {
-              if (blog.isStarred) return <AiFillStar />;
-            }}
-          </div>
-        </div>
-        <div className="icon">
-          <TiSocialTwitter size="30px" />
-          <TiSocialTwitter size="30px" />
-          <TiSocialTwitter size="30px" />
-          <TiSocialTwitter size="30px" />
-        </div>
+      <div className="customContentWrapper">
+        <TopBar about={blog} />
+        <MainBlogContent content={blog.content} />
       </div>
-      {/* Blog itself */}
       {/* floating box for subscribe */}
-      <div className="tagsAndStat">
+      <div className="tagsAndStat customContentWrapper">
         <div className="tags">
           <ul>
             {blog.tags.map((tag) => {
@@ -84,31 +72,31 @@ const Blog = () => {
             })}
           </ul>
         </div>
-        <p>{blog.content}</p>
         <div className="stat">
           <span>
-            <TiSocialTwitter className="buttons" />{" "}
-            <counts>{blog.claps}</counts>
-            <TiSocialTwitter className="buttons" />{" "}
-            <counts>{blog.tweets}</counts>
+            <FaRegHeart className="buttons" /> <counts>{blog.claps}</counts>
+            <FaRegComment className="buttons" /> <counts>{blog.tweets}</counts>
           </span>
           <span>
             <TiSocialTwitter />
-            <TiSocialTwitter />
-            <TiSocialTwitter />
-            <TiSocialTwitter />
+            <TiSocialLinkedin />
+            <TiSocialFacebook />
+            <TiBookmark />
           </span>
         </div>
       </div>
-      <div className="aboutAuthor">
+      <hr className="customContentWrapper" />
+      <div className="aboutAuthor customContentWrapper">
         <img src={blog.author.image} />
         <div className="aboutAuthorContent">
-          <span className="writtenByHeading">Written by </span>
-          <span className="name">{blog.author.name}</span>
-          <span className="about">{blog.author.about}</span>
+          <div className="writtenByHeading">Written by </div>
+          <div className="name">
+            <Link to={"/author/" + blog.author.id}>{blog.author.name}</Link>
+          </div>
+          <div className="about">{blog.author.about}</div>
         </div>
-        <button>Follow</button>
-        <button>
+        <button className="follow">Follow</button>
+        <button className="email">
           <AiOutlineMail />
         </button>
       </div>
