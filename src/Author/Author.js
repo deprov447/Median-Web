@@ -1,19 +1,17 @@
 import { useParams } from "react-router-dom";
 import About from "./About";
 import Blog from "./Blog";
-import "./Author.css";
 import { useQuery, gql } from "@apollo/client";
-
-var id = "61025b16fb5e551bfebf8f8";
+import "./Author.css";
 
 const AUTHOR_QUERY = gql`
-  query {
-    author(id: "6102b5b16fb5e551bfebf8f8") {
-      id
+  query authorQuery($id: ID!) {
+    author(id: $id) {
       name
       image
       about
       following {
+        id
         name
         image
       }
@@ -33,8 +31,11 @@ const AUTHOR_QUERY = gql`
 //on load scroll to the top
 
 const Author = () => {
-  id = useParams().id;
-  const { data, loading, error } = useQuery(AUTHOR_QUERY);
+  const { id } = useParams();
+
+  var { data, loading, error } = useQuery(AUTHOR_QUERY, {
+    variables: { id },
+  });
 
   if (loading) {
     return <div>Loading</div>;
