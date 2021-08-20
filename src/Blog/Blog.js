@@ -2,29 +2,69 @@ import { useParams } from "react-router-dom";
 import { TiSocialTwitter } from "react-icons/ti";
 import { AiOutlineMail } from "react-icons/ai";
 import { AiFillStar } from "react-icons/ai";
+import { useQuery, gql } from "@apollo/client";
 
 import "./Blog.css";
 
+const BLOG_QUERY = gql`
+  query something($id: ID!) {
+    blog(id: $id) {
+      author {
+        name
+        image
+        about
+      }
+      publishedIn
+      title
+      readTime
+      date
+      isStarred
+      tags
+      content
+      claps
+      tweets
+    }
+  }
+`;
+
 const Blog = () => {
-  let { id } = useParams();
+  var { id } = useParams();
+
+  var { data, loading, error } = useQuery(BLOG_QUERY, {
+    variables: { id },
+  });
+
+  if (loading) {
+    return <div>Loading</div>;
+  }
+
+  console.log(data);
+  console.log(error);
+
+  var blog = data.blog;
+
   return (
     <div className="container mx-auto">
-      {id}
-      {/* Content */}
-      <h1>6 Brain Damaging Habits You May Want to Quit</h1>
-      <h2>Do twice as much as you should, half as well as you could</h2>
+      <h1>{blog.title}</h1>
+      <h2>
+        {() => {
+          if (data.subheading) return data.subheading;
+        }}
+      </h2>
       <div className="authorBox">
-        <img src="https://miro.medium.com/fit/c/48/48/1*QnnvVghEGiFnkBs2-tJu6g.jpeg" />
+        <img src={blog.author.image} />
         <div className="div">
           <div className="line1">
-            <span className="name">Shivendra Misra</span>
+            <span className="name">{blog.author.name}</span>
             <button>Follow</button>
           </div>
           <div className="line2">
             <span className="dateAndTime">
-              <span>Jun 16 . 8 min read</span>
+              <span>{blog.date}</span>
             </span>
-            <AiFillStar />
+            {() => {
+              if (blog.isStarred) return <AiFillStar />;
+            }}
           </div>
         </div>
         <div className="icon">
@@ -39,17 +79,18 @@ const Blog = () => {
       <div className="tagsAndStat">
         <div className="tags">
           <ul>
-            <li>Mental Health</li>
-            <li>Neuroscience</li>
-            <li>Self Improvement</li>
-            <li>Habits</li>
-            <li>Mindfulness</li>
+            {blog.tags.map((tag) => {
+              return <li>{tag}</li>;
+            })}
           </ul>
         </div>
+        <p>{blog.content}</p>
         <div className="stat">
           <span>
-            <TiSocialTwitter className="buttons" /> <counts>20K</counts>
-            <TiSocialTwitter className="buttons" /> <counts>160</counts>
+            <TiSocialTwitter className="buttons" />{" "}
+            <counts>{blog.claps}</counts>
+            <TiSocialTwitter className="buttons" />{" "}
+            <counts>{blog.tweets}</counts>
           </span>
           <span>
             <TiSocialTwitter />
@@ -60,14 +101,11 @@ const Blog = () => {
         </div>
       </div>
       <div className="aboutAuthor">
-        <img src="https://miro.medium.com/fit/c/48/48/1*QnnvVghEGiFnkBs2-tJu6g.jpeg" />
+        <img src={blog.author.image} />
         <div className="aboutAuthorContent">
-          <span className="writtenByHeading">Written by</span>
-          <span className="name">Shivendra Misra</span>
-          <span className="about">
-            15x Top Writer | Rethinking human growth through meditation and
-            spirituality. Join me: bit.ly/reinventnewsletter
-          </span>
+          <span className="writtenByHeading">Written by </span>
+          <span className="name">{blog.author.name}</span>
+          <span className="about">{blog.author.about}</span>
         </div>
         <button>Follow</button>
         <button>
