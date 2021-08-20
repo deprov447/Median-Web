@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { client } from "./ApolloClient/client";
 import { ApolloProvider } from "@apollo/client";
 
-import Navbar from "./Navbar/main";
+import Navbar from "./Navbar/Navbar";
 import Home from "./Home/main";
 import OurStory from "./OurStory/OurStory";
 import Membership from "./Membership/Membership";
