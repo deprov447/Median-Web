@@ -15,16 +15,16 @@
 }
 
 .homeContent .rightCol .topics {
-  margin:20px 0px;
+  margin: 20px 0px;
   display: flex;
   flex-wrap: wrap;
 }
 
-.homeContent .rightCol .topics a{
-    color: green;
-    font-size: 15px;
-    margin: 10px auto;
-    min-width: 100%;
+.homeContent .rightCol .topics a {
+  color: green;
+  font-size: 15px;
+  margin: 10px auto;
+  min-width: 100%;
 }
 
 .homeContent .rightCol .topics .topicItem {
@@ -51,12 +51,11 @@
   margin: 0px 15px 15px 0px;
 }
 
-@media only screen and (max-width: 768px)
-{
-    .footer{
-        display:none;
-    }
-    .homeContent .leftCol {
-      width: 100%;
-    }
+@media only screen and (max-width: 768px) {
+  .footer {
+    display: none;
+  }
+  .homeContent .leftCol {
+    width: 100%;
+  }
 }

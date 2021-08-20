@@ -1,5 +1,5 @@
-import "./card.css";
 import { Link } from "react-router-dom";
+import "./TrendingCard.css";
 
 const TrendingCard = (props) => {
   const data = props.data;

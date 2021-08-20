@@ -1,6 +1,6 @@
 import Banner from "./Banner";
-import Trendings from "./Trendings/main";
-import Content2Col from "./Content-2col/main";
+import Trendings from "./Trendings/Trendings";
+import Content2Col from "./MainContent/MainContent";
 
 const Home = () => {
   return (

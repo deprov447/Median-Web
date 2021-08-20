@@ -4,7 +4,7 @@ import { client } from "./ApolloClient/client";
 import { ApolloProvider } from "@apollo/client";
 
 import Navbar from "./Navbar/Navbar";
-import Home from "./Home/main";
+import Home from "./Home/Home";
 import OurStory from "./OurStory/OurStory";
 import Membership from "./Membership/Membership";
 import Write from "./Write/Write";

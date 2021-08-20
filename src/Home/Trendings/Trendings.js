@@ -1,6 +1,6 @@
-import TrendingCard from "./Card";
-import "./main.css";
+import TrendingCard from "./TrendingCard";
 import { useQuery, gql } from "@apollo/client";
+import "./Trendings.css";
 
 const BLOGBYRANK_QUERY = gql`
   query {

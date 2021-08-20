@@ -4,20 +4,23 @@
   top: 120px;
   margin-top: 70px;
   width: 250px;
-  min-width: 250px;;
+  min-width: 250px;
 }
 
-.AuthorPage .author .name{
+.AuthorPage .author .name {
   font-weight: 700;
   margin: 15px 0;
 }
 
-.AuthorPage .author .about, .followlist, .head, .followmore{
+.AuthorPage .author .about,
+.followlist,
+.head,
+.followmore {
   color: rgb(80, 80, 80);
   font-size: 14px;
 }
 
-.AuthorPage .followButton{
+.AuthorPage .followButton {
   background-color: teal;
   padding: 7px 14px;
   border-radius: 50px;
@@ -25,17 +28,17 @@
   margin: 20px 0;
 }
 
-.AuthorPage .head{
+.AuthorPage .head {
   font-variant-caps: all-petite-caps;
   font-size: large;
 }
 
-.AuthorPage .seperator{
+.AuthorPage .seperator {
   margin: 20px 0px;
   color: rgb(68, 68, 68);
 }
 
-.AuthorPage .author .divbottom img{
+.AuthorPage .author .divbottom img {
   display: inline-block;
   border-radius: 20px;
   height: 23px;
